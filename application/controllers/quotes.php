@@ -1,9 +1,20 @@
-public function get_all_quotes()
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Main extends CI_Model {
+
+	public function index()
+	{
+		$this->load->model('Quote');
+		$quotes['favorites'] = $this->Quote->get_all_favorites($this->session->userdata['record']['id']);
+		$quotes['others'] = $this->Quote->get_others-($this->session->userdata['record']['id']);
+		$this->load->view('Main');   
+	}
+	public function get_all_quotes()
 	{
 
 	}
 
-	public function get_all_favorites()
+	public function get_others()
 	{
 
 	}
@@ -13,7 +24,7 @@ public function get_all_quotes()
 		$this->load->model('Mains');
 		$postquote=$this->input->post();
 		$this->Mains->add_quote($postquote);
-		redirect('/Main/quotes');
+		redirect('/Quotes/');
 		
 	}
 
@@ -28,10 +39,4 @@ public function get_all_quotes()
 	}
 
 
-	public function logout()
-	{
-		
-		$this->session->set_flashdata('message', "Have a lovely day!");
-		redirect('/main/index');
-	}
-
+}

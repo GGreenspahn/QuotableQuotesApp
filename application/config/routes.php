@@ -39,16 +39,15 @@
 */
 
 $route['default_controller'] = "mains";
-$route['register'] 	= "mains/try_reg";
+$route['register'] 	= "mains/try_register";
 $route['logout'] 	= "mains/logout";
 $route['login'] 	= "mains/try_login";
 $route['404_override'] = '';
 
 // routes for the pokes view
-$route['tasks_page'] 	= "tasks/index";
-$route['add_task'] 	= "tasks/add_task";
-$route['edit_task/(:num)'] = "tasks/edit_task/$1";
-$route['update_task/(:num)'] = "tasks/update_task/$1";
-$route['delete_task/(:num)'] = "tasks/delete_task/$1";
+$route['quotes_page'] 	= "quotes/index";
+$route['add_quotes'] 	= "quotes/add_quote";
+$route['add_favorite/(:num)'] = "quotes/add_favorite/$1";
+$route['remove_favorite/(:num)'] = "quotes/remove_favorite/$1";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

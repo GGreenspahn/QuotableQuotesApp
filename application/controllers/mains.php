@@ -4,9 +4,9 @@ class Mains extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Main');
+		$this->load->view('Main');   
 	}
-	public function try_reg()
+	public function try_register()
 	{
 		$name = $this->input->post('name');
 		$alias = $this->input->post('alias');
